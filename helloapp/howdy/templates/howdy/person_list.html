@@ -1,0 +1,18 @@
+ {% extends 'howdy/base.html' %}
+
+
+{% block body %} 
+
+    <h2>Person List</h2>
+    <ul>
+        {% for publisher in object_list %}
+            <li>{{ publisher.name }}
+            	<a href="{% url 'howdy:person_edit'   publisher.id %}">Edit</a> &nbsp 
+            	<a href="{% url 'howdy:person_delete' publisher.id %}">Delete</a></li><br>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'howdy:index' %}">Home</a> &nbsp <a href="{% url 'howdy:person_new' %}">New</a>
+    
+
+{% endblock %}

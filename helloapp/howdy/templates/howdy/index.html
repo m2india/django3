@@ -1,0 +1,28 @@
+{% extends 'howdy/base.html' %}
+
+
+{% block title %}Home{% endblock %}
+
+{% block body %} 
+
+
+
+{% if all_name %}
+
+	<table>
+	{% for perons_details in all_name %}
+		<tr>
+		<td>{{ perons_details.name }}</td>
+		<td>{{ album.description }}</td>
+		<td>{{ perons_details.datestamp }}</td>
+		<td><img src="{{ perons_details.image.url }}" width="200" height="200"></td>
+		</tr>
+	{% endfor %}  
+	</table>
+     
+{% endif %}	
+
+
+        
+
+{% endblock %}
